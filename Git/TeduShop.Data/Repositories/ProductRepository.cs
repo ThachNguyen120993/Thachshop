@@ -5,7 +5,7 @@ using TeduShop.Model.Models;
 
 namespace TeduShop.Data.Repositories
 {
-    public interface IProductRepository
+    public interface IProductRepository : IRepository<Product>
     {
         IEnumerable<Product> GetListProductByTag(string tagId, int page, int pageSize, out int totalRow);
     }

@@ -10,12 +10,17 @@ namespace TeduShop.Data.Repositories
 {
     public interface IPostRepository : IRepository<Post>
     {
-        
+        IEnumerable<Post> GetAllByTag(string tag, int page, int pageSize, out int totalRow);
     }
     public class PostRepository : RepositoryBase<Post>, IPostRepository
     {
         public PostRepository(IDbFactory dbFactory) : base(dbFactory)
         {
+        }
+
+        public IEnumerable<Post> GetAllByTag(string tag, int page, int pageSize, out int totalRow)
+        {
+            throw new NotImplementedException();
         }
     }
 }

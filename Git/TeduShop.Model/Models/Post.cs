@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TeduShop.Model.Abstract;
 
@@ -27,7 +28,9 @@ namespace TeduShop.Model.Models
         public bool HotFlag { set; get; }
         public int ViewCount { set; get; }
         [ForeignKey("CategoryID")]
-        public virtual PosttCategory PosttCategory { set; get; }
+        public virtual PosttCategory PostCategory { set; get; }
+        [ForeignKey("CategoryID")]
+        public virtual IEnumerable<PostTag> PostTags { set; get; }
 
     }
 }
